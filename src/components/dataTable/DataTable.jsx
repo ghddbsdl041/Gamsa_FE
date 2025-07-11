@@ -2,8 +2,10 @@ import {useState} from 'react';
 import { DataGrid } from '@mui/x-data-grid'; 
 
 export default function DataTable(){
+    // ✅ 현재 페이지(paginationModel)의 상태: 페이지 번호(page), 한 페이지에 보여줄 행 수(pageSize)
     const [paginationModel, setPaginationModel] = useState({page: 0, pageSize: 5});
 
+    // ✅ DataGrid에 표시할 컬럼 정의 (각 컬럼은 field명과 headerName으로 구성)
     const columns = [
         { field: "inspectionAgency", headerName: "검사실시기관", width: 130 },
         { field: "dispositionRequest", headerName: "처분요구명", width: 130 },
@@ -14,9 +16,9 @@ export default function DataTable(){
         { field: "summary", headerName: "요약", width: 130 },
         { field: "specialCase", headerName: "특이사례", sortable: false, width: 130 },
         { field: "contentAnalysis", headerName: "내용분석", width: 130 },
-];
+    ];
 
-
+    // ✅ rows: 테이블에 렌더링할 실제 데이터 (각 행은 고유 id를 포함해야 함)
     const rows = [
         { id: 1, inspectionAgency: "기관A", dispositionRequest: "처분1", relatedAgency: "관련A", auditResult: "결과1", category: "행정", task: "업무1", summary: "요약1", specialCase: "사례1", contentAnalysis: "분석1" },
         { id: 2, inspectionAgency: "기관B", dispositionRequest: "처분2", relatedAgency: "관련B", auditResult: "결과2", category: "건설", task: "업무2", summary: "요약2", specialCase: "사례2", contentAnalysis: "분석2" },
@@ -40,19 +42,25 @@ export default function DataTable(){
         { id: 20, inspectionAgency: "기관T", dispositionRequest: "처분20", relatedAgency: "관련T", auditResult: "결과20", category: "보건", task: "업무20", summary: "요약20", specialCase: "사례20", contentAnalysis: "분석20" }
     ];
     
-
-
     return(
         <div style = {{height: 400, width: "100%"}}>
             <DataGrid
-                rows={rows}
-                columns={columns}
-                pageSize={5}
-                paginationModel={paginationModel}
-                onPaginationModelChange={setPaginationModel}
-                rowsPerPageOptions={[5, 10, 20, 100]}
-                pagination
+                rows={rows} // ✅ 테이블에 출력할 데이터
+                columns={columns} // ✅ 컬럼 정의
+                paginationModel={paginationModel} // ✅ 페이지 모델 상태 전달 (현재 페이지 번호, 페이지당 행 수)
+                onPaginationModelChange={setPaginationModel} // ✅ 사용자가 페이지 변경 또는 행 개수 변경 시 실행되는 콜백. 내부적으로 setPaginationModel을 호출해 paginationModel을 업데이트
+                //rowsPerPageOptions={[5, 10, 20, 100]} // ✅ 드롭다운으로 보여줄 페이지당 행 수 옵션
+                pagination // ✅ 드롭다운으로 보여줄 페이지당 행 수 옵션 (필수)
             />
         </div>
     );
 }
+
+/*
+rows - 테이블에 표시할 데이터 배열 (id 필수)
+columns - 각 컬럼의 구성 정보 (field, headerName, width , sortable 등)
+pagination - 페이지네이션 UI 활성화
+paginationModel - 현재 페이지 정보 (객체로 {page, pageSize})
+paginationModelChange - 페이지 변경 시 호출되는 콜백
+rowsPerPageOptions - 페이지당 행 수 옵션 목록 (드롭다운)
+*/
