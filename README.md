@@ -46,7 +46,7 @@ DownloadButton.jsx|	HWP, PDF, Excel 다운로드 기능|file-saver, jsPDF (PDF�
 - App.jsx
   - Route "/"
     - Home.jsx (진입 선택 화면: Main / Map)
-      - MainPage.jsx (데이터 분석 메인 페이지)
+      - Main.jsx (데이터 분석 메인 페이지)
         - Filtering.jsx (연도/카테고리 필터)
         - DataTable.jsx (MUI DataGrid 테이블)
           - DataTableDetails.jsx (상세보기)
