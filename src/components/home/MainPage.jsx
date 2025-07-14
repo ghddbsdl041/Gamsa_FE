@@ -22,7 +22,7 @@ export default function MainPage(){
     const [error, setError] = useState(null);
 
     //로직: 조회 버튼 클릭 > 필터 조건을 서버에 요청 > 데이터 받기 > DataTable에 전달
-    const handleSearch = async () => {
+    const handleSearch = async () => {  //async/await 사용하는 이유는 비동기 작업(fetch)의 결과(완료되기)를 기다려서 다음 줄을 실행하고 싶을 때. 그냥 비동기 쓰면 순서 꼬임
         try{
             setIsLoading(true);
             setError(null);
@@ -32,24 +32,57 @@ export default function MainPage(){
                 .map(([k, v]) => `${k}=${encodeURIComponent(v)}`)
                 .join("&");
 
+            //await를 쓰면 Promise가 끝날 때까지 기다림. 순서를 보장함
             const res = await fetch(`/api/audits${queryString ? "?" + queryString : ""}`);  //서버 요청. queryString이 비어있으면(필터 안 했을 때) 기본 전체 요청(/api/audits)이 되고, 값이 있으면 뒤에 붙음
 
             if (!res.ok) throw new Error("서버 응답 실패"); //응답코드가 200(성공)이 아니라면 에러 발생시킴. catch 블록으로 자동 이동
-
+            
+            //여긴 fetch 끝난 다음에 실행됨
             const result = await res.json();
             setData(result);    //성공한 데이터 저장. JSON 형태로 응답 받으면 data에 저장. DataTable에 props로 전달
         } catch (err){  //서버 요청 실패 시 이쪽으로
             setError(err.message || "알 수 없는 오류 발생");    //에러 메시지 저장
-            setData([]);    //이전 데이터 초기화
+            setData([]);    //이전 데이터 초기화 -> 지금은 아무것도 없다고 보여주기 위함
         } finally {
             setIsLoading(false);    //어떤 결과든 무조건 마지막에 로딩 상태 종료 시킴
+        }
+    };
+
+    //초기화 버튼 클릭 > 모든 필터 상태 비움 > 서버에 기본 데이터 요청(fetch) 다시 보냄 > DataTable에 전체 데이터 보이게 만듦
+    const handleReset = async () => {
+        setFilters({
+            agency: '',
+            type: '',
+            startDate: '',
+            endDate: '',
+            category: '',
+            task: '',
+            specialCase: '',
+            keyword: '',
+        });
+
+        //전체 데이터 요청
+        try{
+            setIsLoading(true);
+            setError(null);
+
+            const res = await fetch("/api/audits"); //기다린다
+            if(!res.ok) throw new Error("전체 데이터 요청 실패");
+
+            const result = await res.json();    //또 기다림
+            setData(result);    //다 끝난 다음에 실행됨
+        } catch (err) {
+            setError(err.message || "알 수 없는 오류 발생");
+            setData([]);
+        } finally {
+            setIsLoading(false);
         }
     };
 
     return(
         <div>
             <h2>자체감사 현황</h2>
-            {/* 자식 컴포넌트 자리 */}
+            <Filtering onSearch={handleSearch} onReset={handleReset} />
         </div>
     )
 }
