@@ -82,7 +82,11 @@ export default function MainPage(){
     return(
         <div>
             <h2>자체감사 현황</h2>
-            <Filtering onSearch={handleSearch} onReset={handleReset} />
+            <Filtering 
+                filters={filters} 
+                setFilters={setFilters} 
+                onSearch={handleSearch} 
+                onReset={handleReset} />
         </div>
     )
 }
