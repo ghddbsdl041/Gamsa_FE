@@ -1,4 +1,4 @@
-export default function Filtering(){
+export default function Filtering(filters, setFilters, onSearch, onReset){
     return(
         <div>
 

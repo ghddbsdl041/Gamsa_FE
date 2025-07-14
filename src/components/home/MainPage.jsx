@@ -2,6 +2,7 @@ import { Category } from '@mui/icons-material';
 import {useState} from 'react';
 import Filtering from './Filtering';
 import DataTable from '../dataTable/DataTable';
+import agencies from '../../data/agencies.json';
 
 export default function MainPage(){
     //상태 정의
@@ -20,7 +21,26 @@ export default function MainPage(){
     //로딩(서버 요청 중) / 에러(서버 요청 중 에러 메세지 발생) 상태
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
+    //지역 상태 / 기관 옵션 상태 
+    const [selectedState, setSelectedState] = useState('');
+    const [agencyOptions, setAgencyOptions] = useState([]);
 
+    //로직: 지역 선택 > 관련 기관 보여줌
+    const handleStateChange = (e) => {
+        const selected = e.target.value;
+        setSelectedState(selected);
+
+        if(!selected){
+            setAgencyOptions([]);
+            return;
+        }
+
+        const filtered = agencies
+            .filter(item => item.state === selected)
+            .map(item => item.agency);
+
+        setAgencyOptions(filtered);
+    }
     //로직: 조회 버튼 클릭 > 필터 조건을 서버에 요청 > 데이터 받기 > DataTable에 전달
     const handleSearch = async () => {  //async/await 사용하는 이유는 비동기 작업(fetch)의 결과(완료되기)를 기다려서 다음 줄을 실행하고 싶을 때. 그냥 비동기 쓰면 순서 꼬임
         try{
