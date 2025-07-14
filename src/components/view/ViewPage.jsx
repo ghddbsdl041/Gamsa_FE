@@ -1,4 +1,4 @@
-export default function Filtering(){
+export default function ViewPage(){
     return(
         <div>
 
