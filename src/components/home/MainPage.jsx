@@ -7,6 +7,7 @@ import agencies from '../../data/agencies.json';
 export default function MainPage(){
     //상태 정의
     const [filters, setFilters] = useState({
+        state: '',  //도시는 조회 시 서버에 함께 전달되어야 하므로 포함
         agency: '',
         type: '',
         startDate: '',
@@ -21,15 +22,19 @@ export default function MainPage(){
     //로딩(서버 요청 중) / 에러(서버 요청 중 에러 메세지 발생) 상태
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
-    //지역 상태 / 기관 옵션 상태 
-    const [selectedState, setSelectedState] = useState('');
+    //기관 옵션 상태 
     const [agencyOptions, setAgencyOptions] = useState([]);
 
     //로직: 지역 선택 > 관련 기관 보여줌
     const handleStateChange = (e) => {
         const selected = e.target.value;
-        setSelectedState(selected);
-
+        // 1. 필터 상태에 반영
+        setFilters(prev => ({
+            ...prev,
+            state: selected,
+            agency: ''  //지역 바뀌면 기관도 초기화
+        }))
+        // 2. 기관 목록 필터링
         if(!selected){
             setAgencyOptions([]);
             return;
@@ -38,9 +43,8 @@ export default function MainPage(){
         const filtered = agencies
             .filter(item => item.state === selected)
             .map(item => item.agency);
+    };
 
-        setAgencyOptions(filtered);
-    }
     //로직: 조회 버튼 클릭 > 필터 조건을 서버에 요청 > 데이터 받기 > DataTable에 전달
     const handleSearch = async () => {  //async/await 사용하는 이유는 비동기 작업(fetch)의 결과(완료되기)를 기다려서 다음 줄을 실행하고 싶을 때. 그냥 비동기 쓰면 순서 꼬임
         try{
@@ -71,6 +75,7 @@ export default function MainPage(){
     //초기화 버튼 클릭 > 모든 필터 상태 비움 > 서버에 기본 데이터 요청(fetch) 다시 보냄 > DataTable에 전체 데이터 보이게 만듦
     const handleReset = async () => {
         setFilters({
+            state: '',
             agency: '',
             type: '',
             startDate: '',
@@ -80,6 +85,7 @@ export default function MainPage(){
             specialCase: '',
             keyword: '',
         });
+        setAgencyOptions([]);   //기관 옵션도 초기화 필요
 
         //전체 데이터 요청
         try{
@@ -106,7 +112,10 @@ export default function MainPage(){
                 filters={filters} 
                 setFilters={setFilters} 
                 onSearch={handleSearch} 
-                onReset={handleReset} />
+                onReset={handleReset}
+                onStateChange={handleStateChange}   //도시 선택 핸들러
+                agencyOptions={agencyOptions}   //기관 드롭다운 옵션
+                />
         </div>
     )
 }
