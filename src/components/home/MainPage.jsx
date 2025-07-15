@@ -1,8 +1,7 @@
-import { Category } from '@mui/icons-material';
 import {useState} from 'react';
 import Filtering from './Filtering';
 import DataTable from '../dataTable/DataTable';
-import agencies from '../../data/agencies.json';
+import agencies from '../../data/samplefilter.json';
 
 export default function MainPage(){
     //상태 정의
@@ -27,22 +26,29 @@ export default function MainPage(){
 
     //로직: 지역 선택 > 관련 기관 보여줌
     const handleStateChange = (e) => {
-        const selected = e.target.value;
-        // 1. 필터 상태에 반영
+        const selectedStateName = e.target.value;
+
+        //필터에 state 이름 저장 + 기관 초기화
         setFilters(prev => ({
             ...prev,
-            state: selected,
-            agency: ''  //지역 바뀌면 기관도 초기화
-        }))
-        // 2. 기관 목록 필터링
-        if(!selected){
+            state: selectedStateName,
+            agency: ''
+        }));
+
+        //조건에 맞는 기관 목록 필터랑
+        if (!selectedStateName){
             setAgencyOptions([]);
             return;
         }
 
-        const filtered = agencies
-            .filter(item => item.state === selected)
-            .map(item => item.agency);
+        const filteredAgencies = agencies
+            .filter(item => item.stateName === selectedStateName)
+            .map(item => ({
+                agencyId: item.agencyId,
+                agencyName: item.agencyName
+            }));
+        
+        setAgencyOptions(filteredAgencies);
     };
 
     //로직: 조회 버튼 클릭 > 필터 조건을 서버에 요청 > 데이터 받기 > DataTable에 전달
@@ -108,6 +114,7 @@ export default function MainPage(){
     return(
         <div>
             <h2>자체감사 현황</h2>
+            {error && <p style={{ color: 'red' }}>{error}</p>}
             <Filtering 
                 filters={filters} 
                 setFilters={setFilters} 
@@ -116,6 +123,7 @@ export default function MainPage(){
                 onStateChange={handleStateChange}   //도시 선택 핸들러
                 agencyOptions={agencyOptions}   //기관 드롭다운 옵션
                 />
+            <DataTable data = {data} isLoading = {isLoading} />
         </div>
-    )
+    );
 }

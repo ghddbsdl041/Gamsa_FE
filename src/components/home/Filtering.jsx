@@ -1,18 +1,45 @@
-import agencies from '../../data/agencies.json';
+import agencies from '../../data/samplefilter.json';
 
-export default function Filtering(filters, setFilters, onSearch, onReset, onStateChange, selectedStateId, stateList, agencyOptions){
+export default function Filtering({
+  filters,
+  setFilters,
+  onSearch,
+  onReset,
+  onStateChange,
+  selectedStateId,
+  agencyOptions
+}) {
     // 1. 필터 항목 공통 핸들러
     const handleChange = (e) => {
         const {name, value} = e.target;
-        setFilters(prev => ({   //중괄호 쓰면 리턴 사용해야 하니까 괄호로 묶음? 아님 객체라서 중괄호를 괄호로 감싼 거임?
+        setFilters(prev => ({   // 화살표 함수의 리턴 값을 객체로 지정할 때 괄호로 감싸는 문법. 객체를 명시적으로 반환하기 위해 괄호로 감싼 것.
             ...prev,
             [name]: value
         }));
     };
 
+    /* 
+    중복 제거된 지역 목록
+    const uniqueStates = [...new Set(agencies.map(item => item.stateName))];
+
+    선택된 지역(stateName)에 따라 해당 지역의 기관 목록 필터링
+    const filteredAgencies = agencies
+        .filter(item => item.stateName === selectedState)
+        .map(item => item.agencyName);
+    */
+
+    // stateId 기준으로 고유한 state 목록 생성
+    const stateList = agencies.reduce((acc, cur) => {
+        const exists = acc.find(item => item.stateId === cur.stateId);
+        if (!exists) acc.push({ stateId: cur.stateId, stateName: cur.stateName });
+        return acc;
+    }, []);
+    
+
     return(
         <div>
             <h3>필터 조건</h3>
+
             {/* 광역자치단체(도시) 선택 */}
             <label>광역자치단체</label>
             <select value = {selectedStateId} onChange = {onStateChange}>
@@ -27,7 +54,7 @@ export default function Filtering(filters, setFilters, onSearch, onReset, onStat
             <select name="agency" value={filters.agency} onChange={handleChange}>
                 <option value="">전체</option>
                 {agencyOptions.map((agency) => (
-                    <option key={agency.agencyId} value={agency.agencyName}>{agency.agencyName}</option>
+                    <option key={agency.agencyId} value={agency.agencyId}>{agency.agencyName}</option>
                 ))}
             </select>
 
