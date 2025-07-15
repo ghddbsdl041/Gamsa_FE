@@ -1,0 +1,668 @@
+[
+  {
+    "stateId": 2,
+    "stateName": "강원",
+    "agencyId": 83,
+    "agencyName": "원주시"
+  },
+  {
+    "stateId": 14,
+    "stateName": "부산",
+    "agencyId": 32,
+    "agencyName": "부산광역시"
+  },
+  {
+    "stateId": 15,
+    "stateName": "광주",
+    "agencyId": 8,
+    "agencyName": "광주광역시교육청"
+  },
+  {
+    "stateId": 12,
+    "stateName": "울산",
+    "agencyId": 77,
+    "agencyName": "울산광역시"
+  },
+  {
+    "stateId": 1,
+    "stateName": "서울",
+    "agencyId": 58,
+    "agencyName": "서울특별시노원구"
+  },
+  {
+    "stateId": 14,
+    "stateName": "부산",
+    "agencyId": 44,
+    "agencyName": "부산광역시영도구"
+  },
+  {
+    "stateId": 11,
+    "stateName": "전북",
+    "agencyId": 95,
+    "agencyName": "전북특별자치도교육청"
+  },
+  {
+    "stateId": 14,
+    "stateName": "부산",
+    "agencyId": 40,
+    "agencyName": "부산광역시사하구"
+  },
+  {
+    "stateId": 4,
+    "stateName": "경기",
+    "agencyId": 102,
+    "agencyName": "포천시"
+  },
+  {
+    "stateId": 1,
+    "stateName": "서울",
+    "agencyId": 4,
+    "agencyName": "경기도교육청"
+  },
+  {
+    "stateId": 1,
+    "stateName": "서울",
+    "agencyId": 49,
+    "agencyName": "서울특별시강남구"
+  },
+  {
+    "stateId": 15,
+    "stateName": "광주",
+    "agencyId": 10,
+    "agencyName": "광주광역시북구"
+  },
+  {
+    "stateId": 16,
+    "stateName": "전라남도",
+    "agencyId": 93,
+    "agencyName": "전라남도교육청"
+  },
+  {
+    "stateId": 10,
+    "stateName": "대구",
+    "agencyId": 16,
+    "agencyName": "대구광역시교육청"
+  },
+  {
+    "stateId": 17,
+    "stateName": "제주",
+    "agencyId": 96,
+    "agencyName": "제주특별자치도"
+  },
+  {
+    "stateId": 8,
+    "stateName": "대전",
+    "agencyId": 30,
+    "agencyName": "대전광역시유성구"
+  },
+  {
+    "stateId": 10,
+    "stateName": "대구",
+    "agencyId": 17,
+    "agencyName": "대구광역시남구"
+  },
+  {
+    "stateId": 7,
+    "stateName": "세종",
+    "agencyId": 5,
+    "agencyName": "경상남도교육청"
+  },
+  {
+    "stateId": 8,
+    "stateName": "대전",
+    "agencyId": 27,
+    "agencyName": "대전광역시대덕구"
+  },
+  {
+    "stateId": 1,
+    "stateName": "서울",
+    "agencyId": 97,
+    "agencyName": "춘천시"
+  },
+  {
+    "stateId": 10,
+    "stateName": "대구",
+    "agencyId": 21,
+    "agencyName": "대구광역시북구"
+  },
+  {
+    "stateId": 1,
+    "stateName": "서울",
+    "agencyId": 57,
+    "agencyName": "서울특별시금천구"
+  },
+  {
+    "stateId": 12,
+    "stateName": "울산",
+    "agencyId": 80,
+    "agencyName": "울산광역시북구"
+  },
+  {
+    "stateId": 11,
+    "stateName": "전북",
+    "agencyId": 94,
+    "agencyName": "전북특별자치도"
+  },
+  {
+    "stateId": 1,
+    "stateName": "서울",
+    "agencyId": 56,
+    "agencyName": "서울특별시구로구"
+  },
+  {
+    "stateId": 1,
+    "stateName": "서울",
+    "agencyId": 50,
+    "agencyName": "서울특별시강동구"
+  },
+  {
+    "stateId": 1,
+    "stateName": "서울",
+    "agencyId": 61,
+    "agencyName": "서울특별시동작구"
+  },
+  {
+    "stateId": 15,
+    "stateName": "광주",
+    "agencyId": 3,
+    "agencyName": "경기도"
+  },
+  {
+    "stateId": 7,
+    "stateName": "세종",
+    "agencyId": 74,
+    "agencyName": "세종특별자치시"
+  },
+  {
+    "stateId": 8,
+    "stateName": "대전",
+    "agencyId": 29,
+    "agencyName": "대전광역시서구"
+  },
+  {
+    "stateId": 1,
+    "stateName": "서울",
+    "agencyId": 69,
+    "agencyName": "서울특별시은평구"
+  },
+  {
+    "stateId": 3,
+    "stateName": "인천",
+    "agencyId": 91,
+    "agencyName": "인천광역시연수구"
+  },
+  {
+    "stateId": 1,
+    "stateName": "서울",
+    "agencyId": 65,
+    "agencyName": "서울특별시송파구"
+  },
+  {
+    "stateId": 9,
+    "stateName": "경상북도",
+    "agencyId": 6,
+    "agencyName": "경상북도교육청"
+  },
+  {
+    "stateId": 10,
+    "stateName": "대구",
+    "agencyId": 15,
+    "agencyName": "대구광역시"
+  },
+  {
+    "stateId": 12,
+    "stateName": "울산",
+    "agencyId": 82,
+    "agencyName": "울산광역시중구"
+  },
+  {
+    "stateId": 14,
+    "stateName": "부산",
+    "agencyId": 34,
+    "agencyName": "부산광역시금정구"
+  },
+  {
+    "stateId": 10,
+    "stateName": "대구",
+    "agencyId": 20,
+    "agencyName": "대구광역시동구"
+  },
+  {
+    "stateId": 14,
+    "stateName": "부산",
+    "agencyId": 43,
+    "agencyName": "부산광역시연제구"
+  },
+  {
+    "stateId": 11,
+    "stateName": "전북",
+    "agencyId": 13,
+    "agencyName": "군산시"
+  },
+  {
+    "stateId": 1,
+    "stateName": "서울",
+    "agencyId": 70,
+    "agencyName": "서울특별시종로구"
+  },
+  {
+    "stateId": 8,
+    "stateName": "대전",
+    "agencyId": 25,
+    "agencyName": "대전광역시"
+  },
+  {
+    "stateId": 2,
+    "stateName": "강원",
+    "agencyId": 1,
+    "agencyName": "강원특별자치도교육청"
+  },
+  {
+    "stateId": 14,
+    "stateName": "부산",
+    "agencyId": 42,
+    "agencyName": "부산광역시수영구"
+  },
+  {
+    "stateId": 1,
+    "stateName": "서울",
+    "agencyId": 71,
+    "agencyName": "서울특별시중구"
+  },
+  {
+    "stateId": 10,
+    "stateName": "대구",
+    "agencyId": 93,
+    "agencyName": "전라남도교육청"
+  },
+  {
+    "stateId": 6,
+    "stateName": "충청남도",
+    "agencyId": 99,
+    "agencyName": "충청남도교육청"
+  },
+  {
+    "stateId": 1,
+    "stateName": "서울",
+    "agencyId": 63,
+    "agencyName": "서울특별시서대문구"
+  },
+  {
+    "stateId": 1,
+    "stateName": "서울",
+    "agencyId": 54,
+    "agencyName": "서울특별시광진구"
+  },
+  {
+    "stateId": 12,
+    "stateName": "울산",
+    "agencyId": 78,
+    "agencyName": "울산광역시교육청"
+  },
+  {
+    "stateId": 10,
+    "stateName": "대구",
+    "agencyId": 6,
+    "agencyName": "경상북도교육청"
+  },
+  {
+    "stateId": 15,
+    "stateName": "광주",
+    "agencyId": 7,
+    "agencyName": "광주광역시광산구"
+  },
+  {
+    "stateId": 10,
+    "stateName": "대구",
+    "agencyId": 2,
+    "agencyName": "강진군"
+  },
+  {
+    "stateId": 1,
+    "stateName": "서울",
+    "agencyId": 60,
+    "agencyName": "서울특별시동대문구"
+  },
+  {
+    "stateId": 3,
+    "stateName": "인천",
+    "agencyId": 88,
+    "agencyName": "인천광역시동구"
+  },
+  {
+    "stateId": 14,
+    "stateName": "부산",
+    "agencyId": 35,
+    "agencyName": "부산광역시남구"
+  },
+  {
+    "stateId": 3,
+    "stateName": "인천",
+    "agencyId": 84,
+    "agencyName": "인천광역시"
+  },
+  {
+    "stateId": 1,
+    "stateName": "서울",
+    "agencyId": 72,
+    "agencyName": "서울특별시중랑구"
+  },
+  {
+    "stateId": 3,
+    "stateName": "인천",
+    "agencyId": 89,
+    "agencyName": "인천광역시미추홀구"
+  },
+  {
+    "stateId": 2,
+    "stateName": "강원",
+    "agencyId": 76,
+    "agencyName": "속초시"
+  },
+  {
+    "stateId": 1,
+    "stateName": "서울",
+    "agencyId": 51,
+    "agencyName": "서울특별시강북구"
+  },
+  {
+    "stateId": 3,
+    "stateName": "인천",
+    "agencyId": 86,
+    "agencyName": "인천광역시교육청"
+  },
+  {
+    "stateId": 1,
+    "stateName": "서울",
+    "agencyId": 48,
+    "agencyName": "서울특별시"
+  },
+  {
+    "stateId": 3,
+    "stateName": "인천",
+    "agencyId": 85,
+    "agencyName": "인천광역시계양구"
+  },
+  {
+    "stateId": 1,
+    "stateName": "서울",
+    "agencyId": 55,
+    "agencyName": "서울특별시교육청"
+  },
+  {
+    "stateId": 1,
+    "stateName": "서울",
+    "agencyId": 62,
+    "agencyName": "서울특별시마포구"
+  },
+  {
+    "stateId": 13,
+    "stateName": "경상남도",
+    "agencyId": 5,
+    "agencyName": "경상남도교육청"
+  },
+  {
+    "stateId": 1,
+    "stateName": "서울",
+    "agencyId": 100,
+    "agencyName": "충청북도"
+  },
+  {
+    "stateId": 3,
+    "stateName": "인천",
+    "agencyId": 90,
+    "agencyName": "인천광역시서구"
+  },
+  {
+    "stateId": 10,
+    "stateName": "대구",
+    "agencyId": 23,
+    "agencyName": "대구광역시수성구"
+  },
+  {
+    "stateId": 5,
+    "stateName": "충청북도",
+    "agencyId": 100,
+    "agencyName": "충청북도"
+  },
+  {
+    "stateId": 1,
+    "stateName": "서울",
+    "agencyId": 68,
+    "agencyName": "서울특별시용산구"
+  },
+  {
+    "stateId": 14,
+    "stateName": "부산",
+    "agencyId": 38,
+    "agencyName": "부산광역시북구"
+  },
+  {
+    "stateId": 14,
+    "stateName": "부산",
+    "agencyId": 41,
+    "agencyName": "부산광역시서구"
+  },
+  {
+    "stateId": 15,
+    "stateName": "광주",
+    "agencyId": 11,
+    "agencyName": "광주광역시서구"
+  },
+  {
+    "stateId": 4,
+    "stateName": "경기",
+    "agencyId": 47,
+    "agencyName": "부천시"
+  },
+  {
+    "stateId": 14,
+    "stateName": "부산",
+    "agencyId": 33,
+    "agencyName": "부산광역시교육청"
+  },
+  {
+    "stateId": 6,
+    "stateName": "충청남도",
+    "agencyId": 98,
+    "agencyName": "충청남도"
+  },
+  {
+    "stateId": 1,
+    "stateName": "서울",
+    "agencyId": 64,
+    "agencyName": "서울특별시서초구"
+  },
+  {
+    "stateId": 4,
+    "stateName": "경기",
+    "agencyId": 73,
+    "agencyName": "성남시"
+  },
+  {
+    "stateId": 12,
+    "stateName": "울산",
+    "agencyId": 79,
+    "agencyName": "울산광역시남구"
+  },
+  {
+    "stateId": 1,
+    "stateName": "서울",
+    "agencyId": 59,
+    "agencyName": "서울특별시도봉구"
+  },
+  {
+    "stateId": 4,
+    "stateName": "경기",
+    "agencyId": 4,
+    "agencyName": "경기도교육청"
+  },
+  {
+    "stateId": 15,
+    "stateName": "광주",
+    "agencyId": 12,
+    "agencyName": "광주시"
+  },
+  {
+    "stateId": 14,
+    "stateName": "부산",
+    "agencyId": 77,
+    "agencyName": "울산광역시"
+  },
+  {
+    "stateId": 14,
+    "stateName": "부산",
+    "agencyId": 36,
+    "agencyName": "부산광역시동구"
+  },
+  {
+    "stateId": 8,
+    "stateName": "대전",
+    "agencyId": 28,
+    "agencyName": "대전광역시동구"
+  },
+  {
+    "stateId": 10,
+    "stateName": "대구",
+    "agencyId": 22,
+    "agencyName": "대구광역시서구"
+  },
+  {
+    "stateId": 15,
+    "stateName": "광주",
+    "agencyId": 4,
+    "agencyName": "경기도교육청"
+  },
+  {
+    "stateId": 11,
+    "stateName": "전북",
+    "agencyId": 14,
+    "agencyName": "남원시"
+  },
+  {
+    "stateId": 1,
+    "stateName": "서울",
+    "agencyId": 66,
+    "agencyName": "서울특별시양천구"
+  },
+  {
+    "stateId": 4,
+    "stateName": "경기",
+    "agencyId": 3,
+    "agencyName": "경기도"
+  },
+  {
+    "stateId": 1,
+    "stateName": "서울",
+    "agencyId": 52,
+    "agencyName": "서울특별시강서구"
+  },
+  {
+    "stateId": 3,
+    "stateName": "인천",
+    "agencyId": 92,
+    "agencyName": "인천광역시옹진군"
+  },
+  {
+    "stateId": 12,
+    "stateName": "울산",
+    "agencyId": 81,
+    "agencyName": "울산광역시울주군"
+  },
+  {
+    "stateId": 15,
+    "stateName": "광주",
+    "agencyId": 9,
+    "agencyName": "광주광역시동구"
+  },
+  {
+    "stateId": 14,
+    "stateName": "부산",
+    "agencyId": 45,
+    "agencyName": "부산광역시중구"
+  },
+  {
+    "stateId": 2,
+    "stateName": "강원",
+    "agencyId": 97,
+    "agencyName": "춘천시"
+  },
+  {
+    "stateId": 10,
+    "stateName": "대구",
+    "agencyId": 19,
+    "agencyName": "대구광역시달성군"
+  },
+  {
+    "stateId": 10,
+    "stateName": "대구",
+    "agencyId": 18,
+    "agencyName": "대구광역시달서구"
+  },
+  {
+    "stateId": 7,
+    "stateName": "세종",
+    "agencyId": 75,
+    "agencyName": "세종특별자치시교육청"
+  },
+  {
+    "stateId": 5,
+    "stateName": "충청북도",
+    "agencyId": 101,
+    "agencyName": "충청북도교육청"
+  },
+  {
+    "stateId": 1,
+    "stateName": "서울",
+    "agencyId": 53,
+    "agencyName": "서울특별시관악구"
+  },
+  {
+    "stateId": 8,
+    "stateName": "대전",
+    "agencyId": 26,
+    "agencyName": "대전광역시교육청"
+  },
+  {
+    "stateId": 8,
+    "stateName": "대전",
+    "agencyId": 31,
+    "agencyName": "대전광역시중구"
+  },
+  {
+    "stateId": 1,
+    "stateName": "서울",
+    "agencyId": 67,
+    "agencyName": "서울특별시영등포구"
+  },
+  {
+    "stateId": 3,
+    "stateName": "인천",
+    "agencyId": 87,
+    "agencyName": "인천광역시남동구"
+  },
+  {
+    "stateId": 14,
+    "stateName": "부산",
+    "agencyId": 39,
+    "agencyName": "부산광역시사상구"
+  },
+  {
+    "stateId": 10,
+    "stateName": "대구",
+    "agencyId": 24,
+    "agencyName": "대구광역시중구"
+  },
+  {
+    "stateId": 14,
+    "stateName": "부산",
+    "agencyId": 46,
+    "agencyName": "부산광역시해운대구"
+  },
+  {
+    "stateId": 14,
+    "stateName": "부산",
+    "agencyId": 37,
+    "agencyName": "부산광역시부산진구"
+  }
+]

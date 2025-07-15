@@ -1,5 +1,28 @@
 [
-  { "state": "서울", "agency": "서울기관1" },
-  { "state": "서울", "agency": "서울기관2" },
-  { "state": "부산", "agency": "부산기관1" }
+  {
+    "stateId": "01",
+    "stateName": "서울특별시",
+    "agencies": [
+      {
+        "agencyId": "0101",
+        "agencyName": "서울교육청"
+      },
+      {
+        "agencyId": "0102",
+        "agencyName": "강남구청"
+      }
+    ]
+  },
+  {
+    "stateId": "02",
+    "stateName": "부산광역시",
+    "agencies": [
+      {
+        "agencyId": "0201",
+        "agencyName": "부산교육청"
+      }
+    ]
+  }
 ]
+
+
