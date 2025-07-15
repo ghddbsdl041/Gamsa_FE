@@ -26,30 +26,35 @@ export default function MainPage(){
 
     //로직: 지역 선택 > 관련 기관 보여줌
     const handleStateChange = (e) => {
-        const selectedStateName = e.target.value;
+    const selectedStateId = Number(e.target.value); // 1. 문자열 → 숫자 변환
 
-        //필터에 state 이름 저장 + 기관 초기화
-        setFilters(prev => ({
-            ...prev,
-            state: selectedStateName,
-            agency: ''
+    // 2. 선택된 stateId에 해당하는 stateName 추출
+    const stateEntry = agencies.find((item) => item.stateId === selectedStateId);
+    const stateName = stateEntry?.stateName || "";
+
+    // 3. filters 상태에 stateName 저장
+    setFilters((prev) => ({
+        ...prev,
+        state: stateName,
+        agency: "", // 도시 변경 시 기관 초기화
+    }));
+
+    // 4. 해당 stateId에 속한 기관 목록 필터링
+    if (!selectedStateId || !stateName) {
+        setAgencyOptions([]); // 아무것도 선택 안 했을 경우 초기화
+        return;
+    }
+
+    const filteredAgencies = agencies
+        .filter((item) => item.stateId === selectedStateId)
+        .map((item) => ({
+        agencyId: item.agencyId,
+        agencyName: item.agencyName,
         }));
 
-        //조건에 맞는 기관 목록 필터랑
-        if (!selectedStateName){
-            setAgencyOptions([]);
-            return;
-        }
-
-        const filteredAgencies = agencies
-            .filter(item => item.stateName === selectedStateName)
-            .map(item => ({
-                agencyId: item.agencyId,
-                agencyName: item.agencyName
-            }));
-        
-        setAgencyOptions(filteredAgencies);
+    setAgencyOptions(filteredAgencies); // 5. 기관 옵션 업데이트
     };
+
 
     //로직: 조회 버튼 클릭 > 필터 조건을 서버에 요청 > 데이터 받기 > DataTable에 전달
     const handleSearch = async () => {  //async/await 사용하는 이유는 비동기 작업(fetch)의 결과(완료되기)를 기다려서 다음 줄을 실행하고 싶을 때. 그냥 비동기 쓰면 순서 꼬임
