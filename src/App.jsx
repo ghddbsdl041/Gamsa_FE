@@ -1,9 +1,9 @@
-import DataTable from './components/dataTable/DataTable'
+import MainPage from './components/home/MainPage';
 
 function App() {
   return (
     <div>
-      <DataTable />
+      <MainPage />
     </div>
   )
 }

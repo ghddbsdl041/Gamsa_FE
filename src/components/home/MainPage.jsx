@@ -123,7 +123,7 @@ export default function MainPage(){
                 onStateChange={handleStateChange}   //도시 선택 핸들러
                 agencyOptions={agencyOptions}   //기관 드롭다운 옵션
                 />
-            <DataTable data = {data} isLoading = {isLoading} />
+            <DataTable data = {data} isLoading = {isLoading} error = {error} />
         </div>
     );
 }
